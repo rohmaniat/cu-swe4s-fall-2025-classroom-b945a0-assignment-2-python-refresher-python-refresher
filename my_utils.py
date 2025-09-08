@@ -1,5 +1,5 @@
 def get_column(file_name, query_column, query_value, result_column):
-    open file_name as f #open the file
+    f = open(file_name, 'r') #open the file
 
     #Splits each line by column
     #Checks if query_column matches query_value
