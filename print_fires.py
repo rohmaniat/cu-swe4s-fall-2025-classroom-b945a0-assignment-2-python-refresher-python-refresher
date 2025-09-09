@@ -8,7 +8,9 @@ fires_column = 3 # column 3 == "Forest fires"
 import my_utils
 get_column = my_utils.get_column
 
+# Use get_column
 fires = get_column(file_name, country_column, country, fires_column)
+# Adds together all annual counts found in get_column results
 total_fires = sum(float(fire) for fire in fires)
 
 # Print each nonzero annual count of forest fires in the given country
