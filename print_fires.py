@@ -1,6 +1,6 @@
 # Assign all vars for my_utils.py get_column function
 file_name = 'Agrofood_co2_emission.csv'
-country= 'United States of America'
+country = 'United States of America'
 country_column = 0 # column 0 == "Area"
 fires_column = 3 # column 3 == "Forest fires"
 
