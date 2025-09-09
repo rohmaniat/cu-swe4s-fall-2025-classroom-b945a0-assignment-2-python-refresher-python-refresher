@@ -9,7 +9,8 @@ import my_utils
 get_column = my_utils.get_column
 
 # Use get_column
-fires = get_column(file_name, country_column, country, fires_column)
+fires = get_column(file_name, country_column, country, 
+                   result_column = fires_column)
 # Adds together all annual counts found in get_column results
 total_fires = sum(float(fire) for fire in fires)
 
