@@ -13,7 +13,7 @@ def get_column(file_name, query_column, query_value, result_column = 1):
     for line in f:
         columns = line.strip().split(',')
         if columns[query_column] == query_value:
-            results.append(columns[result_column])
+            results.append(int(columns[result_column]))
 
     f.close()
     return results
