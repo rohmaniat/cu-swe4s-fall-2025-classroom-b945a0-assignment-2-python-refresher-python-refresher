@@ -33,6 +33,17 @@ The sum total of forest fires across all years in (country) is (sum of forest fi
 
 ## run.sh
 
-shell script file that runs the following:
+shell script file that runs
+> python3 print_fires.py
+with multiple sets of arguments
 
-> print_fires.py --file_name Agrofood_co2_emission.csv --country "United States of America" --country_column 0 --fires_column 3
+--file_name Agrofood_co2_emission.csv --country "United States of America" --country_column 0 --fires_column 3
+    this one works
+
+--file_name Agrofood_co2_emision.csv --country "United States of America" --country_column 0 --fires_column 3
+    this one does not work
+    the .csv file name is spelled incorrectly, triggering a FileNotFoundError
+
+--file_name Agrofood_co2_emission.csv --country "United States of America" --country_column 0 --fires_column 4.5
+    this one does not work
+    the fires_column must be an integer
