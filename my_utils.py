@@ -34,6 +34,6 @@ def get_column(file_name, query_column, query_value, result_column):
     return results
 
 if __name__ == "__main__":
-    print(get_column('/Users/rohan/local_coding/assignment-2-python-refresher-rohmaniat/Agrofood_co2_emission.csv', 0, 'United States of America', 3))
+    print(get_column("Agrofood_co2_emission.csv", 0, 'United States of America', 3))
 # only runs when the file is directly called
 # For testing my_utils.py independently
