@@ -6,7 +6,6 @@ import my_utils
 
 def print_fires(file_name, country_column, country, fires_column):
     
-    print("ciao") #make sure the function is being called
     print(file_name, country_column, country, fires_column) 
     #make sure the arguments are being passed correctly
 
