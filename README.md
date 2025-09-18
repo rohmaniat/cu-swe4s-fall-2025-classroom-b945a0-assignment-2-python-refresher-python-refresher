@@ -5,18 +5,34 @@
 ## my_utils.py
 
 Includes the get_column function
-Inputs: **file_name**, **query_column**, **query_value**, **result_column (default = 1)**
+Inputs: **file_name**, **query_column**, **query_value**, **result_column**
 Opens a given file **file_name**.
 Looks in a column **query_column** for all instances of **query_value**.
 Each time a value in **query_column** matches **query_value**, the value in the **result_column** in the same row is called.
 Adds the value in the **result_column** to the results array.
+Converts all values in the results array to floats, then to integers
+
+Contains a main function that tests the get_column function for parameters ("Agrofood_co2_emission.csv", 0, 'United States of America', 3)
 
 ## print_fires.py
 
 uses the get_column function in my_utils.py to output all entries for the number of annual forest fires for a given country
-file_name = 'Agrofood_co2_emission.csv'
-query_column = 0 (labeled as "country_column")
+
+Allows you to pass arguments for the following:
+
+--file_name (default = 'Agrofood_co2_emission.csv')
+--country_column ("query_column" in my_utils, default = 0)
+--country ("query_value" in my_utils, default = "United States of America")
+--fires_column ("result_column in my_utils, default = 3)
+
+Outputs:
+
+The nonzero forest fires numbers in (country) are (list of forest fire counts).
+
+The sum total of forest fires across all years in (country) is (sum of forest fire counts).
 
 ## run.sh
 
-shell script file that runs print_fires.py
+shell script file that runs the following:
+
+> print_fires.py --file_name Agrofood_co2_emission.csv --country "United States of America" --country_column 0 --fires_column 3
