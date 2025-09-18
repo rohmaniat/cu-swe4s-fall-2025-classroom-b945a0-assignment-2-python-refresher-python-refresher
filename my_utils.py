@@ -1,7 +1,7 @@
 def get_column(file_name, query_column, query_value, result_column):
     results = []
     try:
-        f = open(file_name, 'r') # open the file
+        f = open(file_name, 'r') # open the file for reading
     except FileNotFoundError:
             print(f"Error: The file '{file_name}' was not found.")
             return results # exit statement if the file cannot be opened
@@ -13,7 +13,7 @@ def get_column(file_name, query_column, query_value, result_column):
     for line in f:
         columns = line.strip().split(',')
         if columns[query_column] == query_value:
-            results.append(columns[result_column]) #TODO: convert outputs to integers
+            results.append(columns[result_column])
 
     f.close()
 
@@ -23,6 +23,7 @@ def get_column(file_name, query_column, query_value, result_column):
             results[i] = float(results[i])
         except ValueError:
             continue
+    
     # Then convert the floats to integers
     for i in range(0 , len(results)):
         try:
