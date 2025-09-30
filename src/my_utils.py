@@ -33,21 +33,28 @@ def get_column(file_name, query_column, query_value, result_column):
     
     return results
 
-def number_operations(operation, numbers):
-    if operation == "mean":
-        sum = 0
-        number_of_numbers = 0
-        for number in numbers:
-            number =+ sum
-        number_of_numbers = len(numbers)
-
-        return sum / number_of_numbers
+def mean (arr):
+    # Calculate mean
+    mean_out = sum(arr) / len(arr)
+    return mean_out
     
-    if operation == "median":
-        numbers.sort()
+def median (arr):
+    # Calculate median
+    sorted_arr = sorted(arr)
+    list_len = len(arr)
+    median_place = list_len // 2
+    if list_len % 2 == 0:
+        return (sorted_arr[median_place - 1] + sorted_arr[median_place]) / 2
+    if list_len % 2 == 1:
+        return sorted_arr[median_place]
+    else:
+        return ValueError
 
-
-    return None
+def stdev (arr):
+    # Calculate standard deviation
+    mean_out = sum(arr) / len(arr)
+    variance = sum((x - mean_out)**2 for x in arr) / len(arr)
+    return variance**0.5
 
 if __name__ == "__main__":
     print(get_column("Agrofood_co2_emission.csv", 0, 'United States of America', 3))
