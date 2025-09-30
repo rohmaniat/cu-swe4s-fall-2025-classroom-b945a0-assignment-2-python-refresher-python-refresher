@@ -1,6 +1,6 @@
 # Here I'll be testing the functions for mean, median, and standard deviation
 
-# python -m unittest test/unittest_meanmedstdev.py
+# python -m unittest test/unittest_meanmedstdev
 
 import sys
 
@@ -17,7 +17,7 @@ print(sys.path)
 class TestMean(unittest.TestCase):
 	
     def MeanCalcs(self):
-        
+
         self.assertEqual (my_utils.mean(1, 2, 3, 4, 5), 3)
 		# tests to see if the mean of 1-5 is 3
         self.assertEqual (my_utils.mean(10, 20, 30, 40, 50), 30)
