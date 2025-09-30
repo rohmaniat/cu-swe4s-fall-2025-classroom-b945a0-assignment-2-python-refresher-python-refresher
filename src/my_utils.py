@@ -33,6 +33,22 @@ def get_column(file_name, query_column, query_value, result_column):
     
     return results
 
+def number_operations(operation, numbers):
+    if operation == "mean":
+        sum = 0
+        number_of_numbers = 0
+        for number in numbers:
+            number =+ sum
+        number_of_numbers = len(numbers)
+
+        return sum / number_of_numbers
+    
+    if operation == "median"
+        numbers.sort()
+
+
+    return None
+
 if __name__ == "__main__":
     print(get_column("Agrofood_co2_emission.csv", 0, 'United States of America', 3))
 # only runs when the file is directly called
