@@ -43,7 +43,7 @@ def number_operations(operation, numbers):
 
         return sum / number_of_numbers
     
-    if operation == "median"
+    if operation == "median":
         numbers.sort()
 
 
