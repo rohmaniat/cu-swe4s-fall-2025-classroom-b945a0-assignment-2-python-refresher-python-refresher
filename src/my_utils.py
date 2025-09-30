@@ -35,8 +35,11 @@ def get_column(file_name, query_column, query_value, result_column):
 
 def mean (arr):
     # Calculate mean
-    mean_out = sum(arr) / len(arr)
-    return mean_out
+    try:
+        mean_out = sum(arr) / len(arr)
+        return mean_out
+    except ZeroDivisionError:
+        return "Array is empty."
     
 def median (arr):
     # Calculate median
