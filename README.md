@@ -60,3 +60,9 @@ Unit tests for mean, median, and standard deviation operations
 Functional tests for run.sh that runs the print_fires file
 
 uses the Stupid Simple Bash Commands (SSSH) framework
+
+Tests three conditions:
+
+- mean forest fires in the United States
+- median forest fires in Albania
+- standard deviation for forest fires in Malaysia (Error: country is not in the dataset)
