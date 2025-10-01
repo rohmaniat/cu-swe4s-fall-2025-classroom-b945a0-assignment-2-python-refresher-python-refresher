@@ -1,3 +1,5 @@
+import sys
+
 def get_column(file_name, query_column, query_value, result_column):
     results = []
     try:
@@ -61,7 +63,12 @@ def median (arr):
 
 def stdev (arr):
     # Calculate standard deviation
-    mean_out = sum(arr) / len(arr)
+    try:
+        mean_out = sum(arr) / len(arr)
+    except ZeroDivisionError:
+        print("Unable to calculate stdev")
+        sys.exit(1)
+        
     variance = sum((x - mean_out)**2 for x in arr) / len(arr)
     return variance**0.5
 
