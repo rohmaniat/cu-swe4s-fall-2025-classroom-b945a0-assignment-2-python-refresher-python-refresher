@@ -60,6 +60,6 @@ def stdev (arr):
     return variance**0.5
 
 if __name__ == "__main__":
-    print(get_column("Agrofood_co2_emission.csv", 0, 'United States of America', 3))
+    print(get_column("src/agrofood_data_abbreviated.csv", 0, 'United States of America', 3))
 # only runs when the file is directly called
 # For testing my_utils.py independently
