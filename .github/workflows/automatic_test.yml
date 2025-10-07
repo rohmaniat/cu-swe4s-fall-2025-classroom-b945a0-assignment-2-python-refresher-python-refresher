@@ -1,0 +1,18 @@
+name: Run test_utils.py
+
+on:
+  push:  # Runs on push to any branch
+
+jobs:
+  test-utils:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4  # clones your repository to the virtual server
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        activate-environment: environment
+
+    - name: Run test/test_utils.py
+      run: python test/test_utils.py
