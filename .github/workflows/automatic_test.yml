@@ -54,4 +54,5 @@ jobs:
       run: |
         source $(conda info --base)/etc/profile.d/conda.sh
         conda activate SWE4S_hw
+        shopt -s globstar
         pycodestyle "**/*.py"
