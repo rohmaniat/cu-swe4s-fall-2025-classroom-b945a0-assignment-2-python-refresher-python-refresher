@@ -51,4 +51,7 @@ jobs:
 
     - name: Run pycodestyle style checks
       shell: bash
-      run: pycodestyle "**/*.py"
+      run: |
+        source $(conda info --base)/etc/profile.d/conda.sh
+        conda activate SWE4S_hw
+        pycodestyle "**/*.py"
