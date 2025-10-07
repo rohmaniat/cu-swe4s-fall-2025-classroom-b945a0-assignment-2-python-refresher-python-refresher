@@ -1,6 +1,12 @@
-# python-refresher
+# python-refresher homework assignments
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/_G_SdF8U)
+
+## Environment
+
+contained in the environment.yml file, called "SWE4S_hw"
+runs on conda-forge
+notable packages include pycodestyle and numpy
 
 ## my_utils.py
 
@@ -66,3 +72,12 @@ Tests three conditions:
 - mean forest fires in the United States
 - median forest fires in Albania
 - standard deviation for forest fires in Malaysia (Error: country is not in the dataset)
+
+## Automatic Testing
+
+3 main tests:
+
+- Unit testing runs automatically using test_utils.py
+- Functional testing runs automatically using test_print_fires.sh
+- Pycodestyle runs automatically to check all python files for PEP8 compliance
+  - Uses the environment file environment.yml remotely, the environment name is "SWE4S_hw"

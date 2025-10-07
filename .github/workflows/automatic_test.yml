@@ -1,4 +1,4 @@
-name: Run test_utils.py
+name: Run tests
 
 on:
   push:  # Runs on push to any branch
@@ -6,13 +6,55 @@ on:
 jobs:
   test-utils:
     runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -l {0}
 
     steps:
     - uses: actions/checkout@v4  # clones your repository to the virtual server
 
     - uses: conda-incubator/setup-miniconda@v2
       with:
-        activate-environment: environment
+        environment-file: environment.yml
+        activate-environment: SWE4S_hw
 
     - name: Run test/test_utils.py
       run: python test/test_utils.py
+
+  test-print-fires-functional:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -l {0}
+
+    steps:
+    - uses: actions/checkout@v4  # clones the repository to the virtual server
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        environment-file: environment.yml
+        activate-environment: SWE4S_hw
+
+    - name: run test/test_print_fires.sh
+      run: bash test/test_print_fires.sh
+
+  style-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash -l {0}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up conda environment
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          environment-file: environment.yml
+          activate-environment: SWE4S_hw
+
+      - name: Run pycodestyle style checks
+        run: |
+          conda activate SWE4S_hw
+          pycodestyle .
