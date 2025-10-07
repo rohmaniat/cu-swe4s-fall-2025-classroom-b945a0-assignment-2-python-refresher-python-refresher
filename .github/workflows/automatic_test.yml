@@ -51,5 +51,4 @@ jobs:
 
     - name: Run pycodestyle style checks
       shell: bash
-      run: |
-        pycodestyle . --max-line-length=79
+      run: pycodestyle "**/*.py"
