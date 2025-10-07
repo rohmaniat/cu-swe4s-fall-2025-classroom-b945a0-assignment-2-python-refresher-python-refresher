@@ -45,7 +45,7 @@ def mean(arr):
     except ZeroDivisionError:
         return "Array is empty."
     except TypeError:
-        return "Please use floats or strings! :)"
+        raise TypeError("Please use floats or strings! :)")
 
 
 def median(arr):
@@ -53,7 +53,7 @@ def median(arr):
     try:
         sorted_arr = sorted(arr)
     except TypeError:
-        return "Please use floats or strings! :)"
+        raise TypeError("Please use floats or strings! :)")
 
     list_len = len(arr)
     median_place = list_len // 2
