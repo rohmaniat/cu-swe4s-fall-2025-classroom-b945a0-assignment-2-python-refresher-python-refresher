@@ -1,4 +1,4 @@
-name: Run test_utils.py
+name: Run tests
 
 on:
   push:  # Runs on push to any branch
@@ -20,3 +20,22 @@ jobs:
 
     - name: Run test/test_utils.py
       run: python test/test_utils.py
+
+  test-meanmedstdev:
+    runs-on: ubuntu-latest
+    defaults:
+        run:
+          shell: bash -l {0}
+
+    steps:
+    - uses: actions/checkout@v4  # clones your repository to the virtual server
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        environment-file: environment.yml
+        activate-environment: SWE4S_hw
+
+    - name: run test/unittest_meanmedstdev.py
+      run: python test/unittest_meanmedstdev.py
+
+
