@@ -1,7 +1,7 @@
 name: SWE4S_hw
 channels:
-  - defaults
   - conda-forge
+  - defaults
 dependencies:
   - blas=1.0
   - bzip2=1.0.8
@@ -9,8 +9,8 @@ dependencies:
   - expat=2.7.1
   - libcxx=20.1.8
   - libffi=3.4.4
-  - libgfortran=5.0.0
-  - libgfortran5=11.3.0
+  - libgfortran
+  - libgfortran5
   - libmpdec=4.0.0
   - libopenblas=0.3.30
   - libzlib=1.3.1
