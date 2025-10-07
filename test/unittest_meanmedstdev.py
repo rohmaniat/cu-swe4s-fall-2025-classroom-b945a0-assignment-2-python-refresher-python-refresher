@@ -4,7 +4,7 @@
 
 import sys
 
-sys.path.append('src/') # noqa
+sys.path.append('src') # noqa
 
 import unittest
 import random
