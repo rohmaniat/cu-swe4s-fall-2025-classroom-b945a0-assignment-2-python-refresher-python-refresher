@@ -28,7 +28,7 @@ jobs:
           shell: bash -l {0}
 
     steps:
-    - uses: actions/checkout@v4  # clones your repository to the virtual server
+    - uses: actions/checkout@v4  # clones the repository to the virtual server
 
     - uses: conda-incubator/setup-miniconda@v2
       with:
@@ -38,4 +38,18 @@ jobs:
     - name: run test/test_print_fires.sh
       run: bash test/test_print_fires.sh
 
+  style-check:
+    runs-on: ubuntu-latest
 
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: conda-incubator/setup-miniconda@v2
+      with:
+        environment-file: environment.yml
+        activate-environment: SWE4S_hw
+
+    - name: Run pycodestyle style checks
+      shell: bash
+      run: |
+        pycodestyle . --max-line-length=79
